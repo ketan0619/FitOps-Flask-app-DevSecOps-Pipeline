@@ -18,7 +18,7 @@ jobs:
 
    test:
       needs: build
-      runs-on: uubuntu-latest
+      runs-on: ubuntu-latest
       steps:
          - name: test the container
            run: echo "testing the container"
