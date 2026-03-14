@@ -3,6 +3,7 @@ name: portfolio
 on:
    push:
         branches: [main]
+   workflow_dispatch: 
 
 permissions:
         contents: read
@@ -27,6 +28,8 @@ jobs:
 
                    - name: upload static files
                      uses: actions/upload-pages-artifact@v4
+                     with:
+                       path: "."
 
                    - name: deploy to github pages
                      uses: actions/deploy-pages@v4 
