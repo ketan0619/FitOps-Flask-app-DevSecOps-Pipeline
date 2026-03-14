@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths: 
          - '**.html'
+         - '**.css'
 jobs: 
    greet:
      runs-on: ubuntu-latest
