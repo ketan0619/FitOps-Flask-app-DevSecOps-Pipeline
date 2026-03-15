@@ -3,6 +3,7 @@ def calculate_bmi(weight, height):
     bmi = weight / (height_m ** 2)
     return round(bmi, 2)
 
+
 def fitness_plan(bmi, age):
 
     if bmi < 18.5:
