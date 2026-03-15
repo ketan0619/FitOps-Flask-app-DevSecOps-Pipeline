@@ -8,7 +8,6 @@ app = Flask(__name__)
 
 
 def index():
-
     result = None
 
     if request.method == "POST":
