@@ -1,159 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FitOps AI</title>
-    <link href="https://fonts.googleapis.com" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+<meta charset="UTF-8">
+<title>Ketan Gargote | DevOps Engineer</title>
 
-        body {
-            height: 100vh;
-            /* Vibrant Side Gradients */
-            background: 
-                radial-gradient(circle at -10% 50%, rgba(255, 75, 138, 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 110% 50%, rgba(79, 172, 254, 0.2) 0%, transparent 50%),
-                linear-gradient(135deg, #0f0c29, #24243e, #050505);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        .container {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(25px);
-            padding: 30px;
-            border-radius: 24px;
-            width: 380px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 40px 100px rgba(0,0,0,0.6);
-        }
+<style>
 
-        .logo { width: 60px; margin-bottom: 5px; filter: drop-shadow(0 0 10px #4facfe); }
-        h1 { color: white; font-size: 26px; letter-spacing: -0.5px; }
-        .subtitle { color: #888; font-size: 10px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
 
-        .input-group { display: flex; flex-direction: column; gap: 12px; }
-        input {
-            width: 100%;
-            padding: 14px;
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 12px;
-            background: rgba(0, 0, 0, 0.3);
-            color: white;
-            font-size: 14px;
-            transition: 0.3s;
-        }
-        input:focus { outline: none; border-color: #4facfe; background: rgba(0,0,0,0.5); }
+body{
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:white;
+min-height:100vh;
+}
 
-        button {
-            width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 12px;
-            background: linear-gradient(90deg, #ff4b8a, #4facfe);
-            color: white;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 15px;
-            transition: 0.3s;
-        }
-        button:hover { transform: scale(1.02); filter: brightness(1.1); }
+/* NAVBAR */
 
-        /* The Result Section (Hidden by Default) */
-        #resultSection {
-            display: none; /* This hides the raw text completely */
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            animation: fadeIn 0.5s ease;
-        }
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+}
 
-        .bmi-card {
-            background: rgba(79, 172, 254, 0.1);
-            padding: 15px;
-            border-radius: 15px;
-            border: 1px solid rgba(79, 172, 254, 0.3);
-            margin-bottom: 12px;
-        }
-        .bmi-card h2 { color: #4facfe; font-size: 24px; }
-        .bmi-card p { color: white; font-size: 12px; opacity: 0.8; }
+.logo{
+font-size:22px;
+font-weight:600;
+}
 
-        .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .stat-item {
-            background: rgba(255,255,255,0.05);
-            padding: 10px;
-            border-radius: 10px;
-            text-align: left;
-        }
-        .stat-item label { color: #ff4b8a; font-size: 9px; font-weight: 600; text-transform: uppercase; }
-        .stat-item p { color: #ddd; font-size: 12px; margin-top: 2px; }
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+}
 
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-    </style>
+nav ul li a{
+text-decoration:none;
+color:white;
+font-weight:500;
+padding:8px 16px;
+border-radius:20px;
+transition:0.3s;
+}
+
+nav ul li a:hover{
+background:#00c6ff;
+color:black;
+}
+
+/* HERO */
+
+.hero{
+height:85vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px;
+}
+
+.hero h1{
+font-size:55px;
+margin-bottom:10px;
+background:linear-gradient(90deg,#00c6ff,#0072ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero h2{
+font-weight:400;
+margin-top:15px;
+}
+
+.hero p{
+max-width:600px;
+margin-top:10px;
+opacity:0.9;
+}
+
+.email{
+margin-top:20px;
+font-size:18px;
+color:#00e0ff;
+}
+
+/* DEVOPS TOOL ICONS */
+
+.tools{
+margin-top:40px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
+}
+
+.tools img{
+width:60px;
+transition:0.4s;
+}
+
+.tools img:hover{
+transform:scale(1.2);
+}
+
+/* SECTIONS */
+
+.section{
+padding:80px 10%;
+text-align:center;
+}
+
+.section h2{
+margin-bottom:30px;
+font-size:35px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+padding:30px;
+border-radius:15px;
+backdrop-filter:blur(10px);
+max-width:700px;
+margin:auto;
+}
+
+/* BUTTON */
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 28px;
+border-radius:25px;
+background:#00c6ff;
+color:black;
+font-weight:600;
+text-decoration:none;
+transition:0.3s;
+}
+
+.btn:hover{
+background:white;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:20px;
+background:rgba(255,255,255,0.05);
+margin-top:40px;
+font-size:14px;
+}
+
+/* TERMINAL INTRO */
+
+#terminal-intro{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#0d1117;
+color:#00ff9c;
+font-family:monospace;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+#terminal-box{
+width:600px;
+max-width:90%;
+background:#161b22;
+padding:30px;
+border-radius:10px;
+box-shadow:0 0 20px rgba(0,0,0,0.6);
+}
+
+.line{
+margin:10px 0;
+opacity:0;
+animation:appear 0.5s forwards;
+}
+
+@keyframes appear{
+to{opacity:1}
+}
+
+</style>
 </head>
+
 <body>
 
-<div class="container">
-    <img src="./logo.png" class="logo" alt="Logo">
-    <h1>FitOps AI</h1>
-    <p class="subtitle">Next-Gen Fitness</p>
+<!-- TERMINAL INTRO -->
 
-    <div class="input-group">
-        <input type="number" id="age" placeholder="Age">
-        <input type="number" id="height" placeholder="Height (cm)">
-        <input type="number" id="weight" placeholder="Weight (kg)">
-        <button onclick="calculateBMI()">Analyze Now</button>
-    </div>
+<div id="terminal-intro">
 
-    <!-- This section is now controlled by Javascript, so no raw code shows -->
-    <div id="resultSection">
-        <div class="bmi-card">
-            <h2 id="bmiValue">24.5</h2>
-            <p id="bmiCategory">Normal Weight</p>
-        </div>
-        
-        <div class="stats-grid">
-            <div class="stat-item">
-                <label>Daily Steps</label>
-                <p id="stepGoal">8,000</p>
-            </div>
-            <div class="stat-item">
-                <label>Workout</label>
-                <p id="workoutType">Cardio</p>
-            </div>
-            <div class="stat-item" style="grid-column: span 2;">
-                <label>Diet Tip</label>
-                <p id="dietTip">Focus on high protein and leafy greens.</p>
-            </div>
-        </div>
-    </div>
+<div id="terminal-box">
+
+<div class="line" style="animation-delay:0.5s">
+> Initializing DevOps Environment...
 </div>
 
+<div class="line" style="animation-delay:1.5s">
+> Loading Cloud Infrastructure...
+</div>
+
+<div class="line" style="animation-delay:2.5s">
+> Starting CI/CD Pipelines...
+</div>
+
+<div class="line" style="animation-delay:3.5s">
+> Welcome Ketan Gargote
+</div>
+
+</div>
+
+</div>
+
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">Ketan Gargote</div>
+
+<ul>
+<li><a href="#linkedin">LinkedIn</a></li>
+<li><a href="#github">GitHub</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>Welcome to My DevOps & Cloud Portfolio</h1>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Devops-toolchain.svg"
+style="width:90px;margin:20px 0;">
+
+<h2>Ketan Gargote</h2>
+
+<p>
+DevOps Engineer passionate about automation, cloud infrastructure,
+CI/CD pipelines and building scalable systems.
+</p>
+
+<div class="email">
+📧 gargoteketan1234@gmail.com
+</div>
+
+<div class="tools">
+
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aws/aws-original.svg">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-original.svg">
+
+</div>
+
+</section>
+
+
+<!-- LINKEDIN -->
+
+<section id="linkedin" class="section">
+
+<h2>LinkedIn</h2>
+
+<div class="card">
+
+<p>
+Connect with me professionally and explore my DevOps journey,
+certifications and projects.
+</p>
+
+<a class="btn"
+href="https://www.linkedin.com/in/ketan-gargote-052b6a227"
+target="_blank">
+
+Visit LinkedIn Profile
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- GITHUB -->
+
+<section id="github" class="section">
+
+<h2>GitHub Projects</h2>
+
+<div class="card">
+
+<p>
+Explore my DevOps projects including Infrastructure as Code,
+automation and CI/CD pipelines.
+</p>
+
+<a class="btn">
+GitHub Repositories (Coming Soon)
+</a>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="section">
+
+<h2>Contact</h2>
+
+<div class="card">
+
+<p>
+Interested in DevOps, Cloud, or Automation?
+Let's collaborate and deploy something impactful together.
+</p>
+
+<p style="margin-top:15px;font-size:18px;">
+📧 gargoteketan1234@gmail.com
+</p>
+
+</div>
+
+</section>
+
+
+<footer>
+
+© 2026 Ketan Gargote | DevOps Engineer
+
+</footer>
+
+
 <script>
-    function calculateBMI() {
-        const h = document.getElementById('height').value / 100;
-        const w = document.getElementById('weight').value;
-        
-        if(h > 0 && w > 0) {
-            const bmi = (w / (h * h)).toFixed(1);
-            document.getElementById('bmiValue').innerText = bmi;
-            
-            let category = "";
-            if(bmi < 18.5) category = "Underweight";
-            else if(bmi < 25) category = "Normal Weight";
-            else category = "Overweight";
-            
-            document.getElementById('bmiCategory').innerText = category;
-            document.getElementById('resultSection').style.display = 'block';
-        } else {
-            alert("Please enter valid height and weight");
-        }
-    }
+
+setTimeout(function(){
+document.getElementById("terminal-intro").style.display="none";
+},4500);
+
 </script>
+
 
 </body>
 </html>
