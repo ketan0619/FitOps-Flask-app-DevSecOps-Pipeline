@@ -13,9 +13,10 @@ def index():
         age = int(request.form["age"])
         height = float(request.form["height"])
         weight = float(request.form["weight"])
+        gender = request.form["gender"]   # NEW LINE
 
         bmi = calculate_bmi(weight, height)
-        plan = fitness_plan(bmi, age)
+        plan = fitness_plan(bmi, age, gender)  # UPDATED
 
         result = {
             "bmi": bmi,

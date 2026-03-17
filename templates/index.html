@@ -17,10 +17,28 @@
 <img src="/static/logo.png" class="logo">
 
 <h1>FitOps AI</h1>
-
 <p class="subtitle">AI Powered Fitness Planner</p>
 
+<!-- Tabs -->
+<div class="tabs">
+<button class="tab active" onclick="openTab('planner')">Fitness Planner</button>
+<button class="tab" onclick="openTab('chart')">Height-Weight Chart</button>
+</div>
+
+<!-- Planner TAB -->
+<div id="planner" class="tabcontent active">
+
 <form method="POST">
+
+<div class="gender">
+<label>
+<input type="radio" name="gender" value="male" required> Male
+</label>
+
+<label>
+<input type="radio" name="gender" value="female"> Female
+</label>
+</div>
 
 <input type="number" name="age" placeholder="Age" required>
 
@@ -39,15 +57,79 @@
 <h2>BMI: {{result.bmi}}</h2>
 
 <p><b>Category:</b> {{result.category}}</p>
-<p><b>Daily Steps:</b> {{result.steps}}</p>
-<p><b>Workout:</b> {{result.workout}}</p>
-<p><b>Diet:</b> {{result.diet}}</p>
+
+<hr>
+
+<h3>Daily Activity</h3>
+<p>{{result.steps}}</p>
+
+<h3>Workout Plan</h3>
+<ul>
+{% for w in result.workout %}
+<li>{{w}}</li>
+{% endfor %}
+</ul>
+
+<h3>Diet Plan</h3>
+<ul>
+{% for d in result.diet %}
+<li>{{d}}</li>
+{% endfor %}
+</ul>
 
 </div>
 
 {% endif %}
 
 </div>
+
+<!-- Height Weight Chart TAB -->
+
+<div id="chart" class="tabcontent">
+
+<h2>Ideal Weight Chart</h2>
+
+<h3>Male</h3>
+<table>
+<tr><th>Height</th><th>Weight</th></tr>
+<tr><td>160 cm</td><td>56-67 kg</td></tr>
+<tr><td>165 cm</td><td>59-72 kg</td></tr>
+<tr><td>170 cm</td><td>63-76 kg</td></tr>
+<tr><td>175 cm</td><td>67-81 kg</td></tr>
+<tr><td>180 cm</td><td>72-87 kg</td></tr>
+</table>
+
+<h3>Female</h3>
+<table>
+<tr><th>Height</th><th>Weight</th></tr>
+<tr><td>150 cm</td><td>45-56 kg</td></tr>
+<tr><td>155 cm</td><td>48-59 kg</td></tr>
+<tr><td>160 cm</td><td>50-62 kg</td></tr>
+<tr><td>165 cm</td><td>54-65 kg</td></tr>
+<tr><td>170 cm</td><td>58-70 kg</td></tr>
+</table>
+
+</div>
+
+</div>
+
+<script>
+
+function openTab(tabName){
+
+let tabs=document.querySelectorAll(".tabcontent");
+let btns=document.querySelectorAll(".tab");
+
+tabs.forEach(t=>t.classList.remove("active"));
+btns.forEach(b=>b.classList.remove("active"));
+
+document.getElementById(tabName).classList.add("active");
+
+event.target.classList.add("active");
+
+}
+
+</script>
 
 </body>
 </html>
