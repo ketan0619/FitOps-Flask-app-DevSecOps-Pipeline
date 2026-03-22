@@ -4,13 +4,13 @@ on:
 
 jobs:
      validate-dockerfile:
-                  runs-on: unbuntu-latest
+                  runs-on: self-hosted
 
                   steps:
                       - name: Checkout Code
                         uses: actions/checkout@v4
 
                       - name: Validate Dockerfile
-                        uses: hadolint/hadolint-actions@v3.1.0
+                        uses: hadolint/hadolint-action@v3.1.0
                         with:
                            dockerfile: Dockerfile
