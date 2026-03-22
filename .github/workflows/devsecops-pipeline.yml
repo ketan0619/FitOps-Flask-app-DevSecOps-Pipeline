@@ -4,7 +4,6 @@ on:
    workflow_dispatch:
 
 jobs:
-    deploy:
        code-quality:
             uses: ./.github/workflows/code-quality.yml
 
